@@ -1,0 +1,54 @@
+storejs
+
+
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { composeWithDevTools } from "@redux-devtools/extension";
+import {combineReducers} from "redux"
+import {thunk} from "redux-thunk";
+import authReducer from "./reducers/auth" //bunu kullan
+
+const initialState = {};
+
+const reducers = combineReducers({});
+
+const store = configureStore({
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(thunk),
+  devTools: process.env.NODE_ENV !== "production"
+    ? composeWithDevTools()
+    : false,
+});
+
+export default store;
+
+
+
+
+
+
+
+
+
+
+
+
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { composeWithDevTools } from "@redux-devtools/extension";
+import {applyMiddleware, combineReducers , createStore} from "redux"
+import {thunk} from "redux-thunk";
+import authReducer from "./reducers/auth";
+// import { applyDefaults } from "../../../server/models/auth";
+
+const initialState = {};
+
+const reducers = combineReducers({
+
+auth :authReducer
+
+});
+
+const store = createStore(reducers , initialState , composeWithDevTools(applyMiddleware(thunk)))
+
+export default store;
+
