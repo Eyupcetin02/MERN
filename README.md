@@ -1,1 +1,1 @@
-# MERN
+# BLOG APP
