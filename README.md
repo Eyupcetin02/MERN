@@ -27,7 +27,7 @@ For Frontend - `cd frontend` `npm i`
 
 ## Author
 
-burayada linkedin falan
+LinkedIn Click [Here(https://www.linkedin.com/in/eyupcetin00/)] @eyupcetin00
 
 
 
